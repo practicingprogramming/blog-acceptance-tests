@@ -1,2 +1,10 @@
 Capybara.app_host = 'http://practicingprogramming.com'
-Capybara.default_driver = :selenium
+
+case ENV['driver']
+when 'selenium'
+  Capybara.default_driver = :selenium
+when 'poltergeist'
+  Capybara.default_driver = :poltergeist
+else
+  fail 'Driver is unknown or not set'
+end
