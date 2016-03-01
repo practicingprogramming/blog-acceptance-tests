@@ -21,3 +21,15 @@ end
 Then(/^I should see About page$/) do
   expect(current_url).to match(/.*\/about$/)
 end
+
+Given(/^I am on the About page$/) do
+  visit('/#/about')
+end
+
+When(/^I click Posts$/) do
+  click_on 'Posts'
+end
+
+Then(/^I should see Front page$/) do
+  expect(current_url).to match(/.*\/#\/$/)
+end
