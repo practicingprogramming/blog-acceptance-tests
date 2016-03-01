@@ -3,5 +3,5 @@ Given /^I am on the front page$/ do
 end
 
 Then /^I should see posts$/ do
-  page.should have_xpath('//ng-include[@src="post.partial"]')
+  expect(page).to have_xpath('//ng-include[@src="post.partial"]')
 end
